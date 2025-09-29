@@ -3,7 +3,7 @@
 #include <time.h>
 #include <string.h>
 
-#define INPUT "./behGithub/beh.txt"
+#define INPUT "beh.txt"
 #define OUTPUT "vysledky.txt"
 #define MAX_LINE_LENGTH 100
 #define DATA_LENGTH 20
