@@ -73,6 +73,7 @@ DATA parseData(DATA data, char *storage){
             data.timeFormated.sec = atoi(token);
             break;        
         default:
+            exit(-999);
             break;
         }
     }
