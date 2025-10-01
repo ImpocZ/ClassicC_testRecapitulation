@@ -165,6 +165,10 @@ int findCzechs(DATA *data, int total){
     return czechs;
 }
 
+int compMonths(int firstMonth, int secondMonth){
+    return firstMonth < secondMonth ? firstMonth : secondMonth;
+}
+
 int findTheOldest(DATA *data, int total){
     int index = 0;
     for (int i = 1; i < total; i++)
@@ -172,6 +176,13 @@ int findTheOldest(DATA *data, int total){
         if (data[index].birthdate.year > data[i].birthdate.year)
         {
             index = i;
+        } else if (data[index].birthdate.year == data[i].birthdate.year)
+        {
+            int sin = data[index].birthdate.month == compMonths(data[index].birthdate.month, data[i].birthdate.month);
+            if (!sin)
+            {
+                index = i;
+            }
         }
     }
     return index;
